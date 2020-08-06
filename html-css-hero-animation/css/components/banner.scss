@@ -1,0 +1,107 @@
+@import "../variables.scss";
+
+.banner {
+  position: relative;
+  height: 80vh;
+  @media (max-width: $widescreen) {
+    height: 90vh;
+  }
+
+  .banner-addition-bg {
+    background: $blue;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    height: 100%;
+  }
+  .banner-bg {
+    background: $lPink;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    height: 100%;
+  }
+
+  .banner-inner {
+    display: flex;
+    position: relative;
+    height: 80vh;
+    width: 100%;
+    @media (max-width: $widescreen) {
+      height: 90vh;
+    }
+
+    .content {
+      width: 60%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      .content-inner {
+        h1 {
+          font-family: "Playfair Display", "Poppins";
+          color: $blue;
+          font-size: 3.4rem;
+          line-height: 4.8rem;
+          margin: 32px 0 0;
+          width: 620px;
+          @media (max-width: $widescreen) {
+            font-size: 3.1rem;
+            line-height: 3.6rem;
+          }
+          .line {
+            margin-bottom: 1rem;
+          }
+        }
+        p {
+          line-height: 22px;
+          font-size: 16px;
+          font-weight: 300;
+          color: $blue;
+          width: 460px;
+          margin: 32px 0 80px;
+          @media (max-width: $widescreen) {
+            margin: 16px 0 60px;
+          }
+        }
+        .btn-row {
+          a {
+              text-decoration: none;
+              color: white;
+              display: inline-block;
+              line-height: 52px;
+              background-color: $redOrange;
+              border-radius: 100px;
+              padding: 0 32px;
+              transition: 0.2s ease-in-out;
+              font-size: 1rem;
+              font-weight: 600;
+          }
+        }
+
+        .play-video {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            background: white;
+            border-radius: 4px 4px 0 0;
+            
+            span {
+                display: flex;
+                align-items: center;
+                height:64px;
+                padding: 0 32px;
+                font-weight: 600;
+                color: $blue;
+                img {
+                    margin-right: 1rem;
+                }
+                }
+        }
+      }
+    }
+  }
+}
