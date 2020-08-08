@@ -1,0 +1,82 @@
+.features {
+  margin-top: 20vh;
+  position: relative;
+  .features-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    @media (max-width: $tablet) {
+      flex-direction: column;
+    }
+  }
+
+  .features-content {
+    display: flex;
+    flex-direction: column;
+    width: 33%;
+
+    @media (max-width: $widescreen) {
+      width: 40%;
+    }
+    @media (max-width: $tablet) {
+      width: 100%;
+    }
+    h3 {
+      font-size: 32px;
+      color: $blue;
+      font-family: "Playfair Display", "Poppins";
+      margin: 0 0 20px;
+      line-height: 3rem;
+    }
+    p {
+      color: $blue;
+      font-weight: 300;
+      margin-bottom: 65px;
+      line-height: 1.8rem;
+    }
+    .btn-row {
+      a {
+        color: $blue;
+        font-weight: 600;
+        text-decoration: none;
+        img {
+          margin-left: 16px;
+        }
+      }
+    }
+  }
+
+  .features-list {
+    display: flex;
+    justify-content: center;
+    width: 50%;
+    @media (max-width: $tablet) {
+      margin-top: 5rem;
+      width: 100%;
+    }
+    ul {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      list-style: none;
+      padding: 0;
+      li {
+        h5 {
+          color: $blue;
+          font-weight: 600;
+          margin: 0;
+        }
+        p {
+          width: 270px;
+          @media (max-width: $tablet) {
+            width: 100%;
+          }
+        }
+        img {
+          margin-bottom: 24px;
+        }
+      }
+    }
+  }
+}
