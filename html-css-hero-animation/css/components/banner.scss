@@ -42,10 +42,10 @@
       align-items: center;
       .content-inner {
         h1 {
-          font-family: "Playfair Display", "Poppins";
+          font-family: "Playfair Display";
           color: $blue;
-          font-size: 40px;
-          line-height: 2.3rem;
+          font-size: 3.4rem;
+          line-height: 4.8rem;
           margin: 32px 0 0;
           width: 620px;
           @media (max-width: $widescreen) {
@@ -53,7 +53,12 @@
             line-height: 3.6rem;
           }
           .line {
-            margin-bottom: 1rem;
+            overflow: hidden;
+            height: 70px;
+            position: relative;
+            span {
+              position: absolute;
+            }
           }
         }
         p {
@@ -86,10 +91,18 @@
           position: absolute;
           bottom: 0;
           left: 0;
-          background: white;
           border-radius: 4px 4px 0 0;
-
+          .cover {
+            padding: 0;
+            right:0;
+            background-color: $lPink;
+            height: 64px;
+            opacity: 0;
+            z-index: 9;
+          }
           span {
+            background-color: white;
+            opacity: 0;
             display: flex;
             align-items: center;
             height: 64px;
