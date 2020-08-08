@@ -482,7 +482,7 @@ body {
       display: flex;
       align-items: center; }
       .banner .banner-inner .content .content-inner h1 {
-        font-family: "Playfair Display", "Poppins";
+        font-family: "Playfair Display";
         color: #233567;
         font-size: 3.4rem;
         line-height: 4.8rem;
@@ -493,14 +493,18 @@ body {
             font-size: 3.1rem;
             line-height: 3.6rem; } }
         .banner .banner-inner .content .content-inner h1 .line {
-          margin-bottom: 1rem; }
+          overflow: hidden;
+          height: 70px;
+          position: relative; }
+          .banner .banner-inner .content .content-inner h1 .line span {
+            position: absolute; }
       .banner .banner-inner .content .content-inner p {
         line-height: 22px;
         font-size: 16px;
         font-weight: 300;
         color: #233567;
         width: 460px;
-        margin: 32px 0 80px; }
+        margin: 32px 0 50px; }
         @media (max-width: 1440px) {
           .banner .banner-inner .content .content-inner p {
             margin: 16px 0 60px; } }
@@ -519,9 +523,17 @@ body {
         position: absolute;
         bottom: 0;
         left: 0;
-        background: white;
         border-radius: 4px 4px 0 0; }
+        .banner .banner-inner .content .content-inner .play-video .cover {
+          padding: 0;
+          right: 0;
+          background-color: #ffe5e5;
+          height: 64px;
+          opacity: 0;
+          z-index: 9; }
         .banner .banner-inner .content .content-inner .play-video span {
+          background-color: white;
+          opacity: 0;
           display: flex;
           align-items: center;
           height: 64px;
@@ -530,3 +542,103 @@ body {
           color: #233567; }
           .banner .banner-inner .content .content-inner .play-video span img {
             margin-right: 1rem; }
+    .banner .banner-inner .image {
+      position: relative;
+      width: 40%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: flex-end; }
+      .banner .banner-inner .image .image-inner img {
+        position: absolute;
+        width: 450px;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: 10; }
+        @media (max-width: 1440px) {
+          .banner .banner-inner .image .image-inner img {
+            width: 400px; } }
+      .banner .banner-inner .image .image-inner .feature-banner {
+        position: absolute;
+        bottom: 280px;
+        left: 7px;
+        background-color: #315b96;
+        color: #ffffff;
+        height: 52px;
+        display: flex;
+        align-items: center;
+        border-radius: 4px;
+        font-weight: 600;
+        padding: 0 32px; }
+        .banner .banner-inner .image .image-inner .feature-banner.green {
+          background-color: #76d8aa;
+          bottom: 126px;
+          right: 20px;
+          left: auto; }
+          @media (max-width: 1440px) {
+            .banner .banner-inner .image .image-inner .feature-banner.green {
+              right: -24px; } }
+
+.features {
+  margin-top: 20vh;
+  position: relative; }
+  .features .features-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start; }
+    @media (max-width: 768px) {
+      .features .features-inner {
+        flex-direction: column; } }
+  .features .features-content {
+    display: flex;
+    flex-direction: column;
+    width: 33%; }
+    @media (max-width: 1440px) {
+      .features .features-content {
+        width: 40%; } }
+    @media (max-width: 768px) {
+      .features .features-content {
+        width: 100%; } }
+    .features .features-content h3 {
+      font-size: 32px;
+      color: #233567;
+      font-family: "Playfair Display", "Poppins";
+      margin: 0 0 20px;
+      line-height: 3rem; }
+    .features .features-content p {
+      color: #233567;
+      font-weight: 300;
+      margin-bottom: 65px;
+      line-height: 1.8rem; }
+    .features .features-content .btn-row a {
+      color: #233567;
+      font-weight: 600;
+      text-decoration: none; }
+      .features .features-content .btn-row a img {
+        margin-left: 16px; }
+  .features .features-list {
+    display: flex;
+    justify-content: center;
+    width: 50%; }
+    @media (max-width: 768px) {
+      .features .features-list {
+        margin-top: 5rem;
+        width: 100%; } }
+    .features .features-list ul {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      list-style: none;
+      padding: 0; }
+      .features .features-list ul li h5 {
+        color: #233567;
+        font-weight: 600;
+        margin: 0; }
+      .features .features-list ul li p {
+        width: 270px; }
+        @media (max-width: 768px) {
+          .features .features-list ul li p {
+            width: 100%; } }
+      .features .features-list ul li img {
+        margin-bottom: 24px; }
