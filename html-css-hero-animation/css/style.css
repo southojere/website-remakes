@@ -488,6 +488,9 @@ body {
         line-height: 4.8rem;
         margin: 32px 0 0;
         width: 620px; }
+        @media (max-width: 768px) {
+          .banner .banner-inner .content .content-inner h1 {
+            width: 100%; } }
         @media (max-width: 1440px) {
           .banner .banner-inner .content .content-inner h1 {
             font-size: 3.1rem;
@@ -549,6 +552,9 @@ body {
       display: flex;
       justify-content: center;
       align-items: flex-end; }
+      @media (max-width: 768px) {
+        .banner .banner-inner .image {
+          display: none; } }
       .banner .banner-inner .image .image-inner img {
         position: absolute;
         width: 450px;

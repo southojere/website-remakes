@@ -48,6 +48,9 @@
           line-height: 4.8rem;
           margin: 32px 0 0;
           width: 620px;
+          @media (max-width: $tablet) {
+            width:100%;
+          }
           @media (max-width: $widescreen) {
             font-size: 3.1rem;
             line-height: 3.6rem;
@@ -123,6 +126,10 @@
       display: flex;
       justify-content: center;
       align-items: flex-end;
+
+      @media (max-width: $tablet) {
+        display: none;
+      }
       .image-inner {
         img {
           position: absolute;

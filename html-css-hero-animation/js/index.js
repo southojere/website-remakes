@@ -11,8 +11,8 @@ const introTimeline = gsap.timeline();
 
 // content
 const pageTitles = document.querySelectorAll(".line span");
-const contentText = getHtml('.content-inner p');
-const contentButton = getHtml('.content-inner .btn-row')
+const contentText = getHtml(".content-inner p");
+const contentButton = getHtml(".content-inner .btn-row");
 const playVideo = getHtml(".play-video span");
 const playVideoCover = getHtml(".play-video .cover");
 
@@ -39,90 +39,111 @@ introTimeline
     duration: 0.8,
     ease: "power3.out",
     stagger: {
-      amount: 0.2
-    }
-  }).from([contentText, contentButton], {
-      delay: -0.6,
-      y:-40,
-      duration:.8,
-      opacity:0,
-      ease: "power3.out",
-      stagger:.2,
-  }).to([playVideo,playVideoCover], {
-      delay:-.6,
-      opacity:1,
-      duration:0,
-  }).to(playVideoCover, {
-      delay:-.5,
-      height:0,
-      duration: 1,
-      ease: "power3.out"
+      amount: 0.2,
+    },
   })
-
-
-//   Home page hand image 
-const image = getHtml('.image-inner img')
-const featureBanner = getHtml('#featureBanner')
-const featureBannerGreen = getHtml('#featureBannerGreen')
-gsap.from(image, {
-    delay: 2.2,
-    x: -100,
-    skewX: 2,
-    duration: 0.8,
-    opacity: 0,
-    ease: "power3.out"
-  });
-  
-  gsap.from([featureBanner, featureBannerGreen], {
-    delay: 2.4,
-    x: -60,
-    skewX: 6,
+  .from([contentText, contentButton], {
+    delay: -0.6,
+    y: -40,
     duration: 0.8,
     opacity: 0,
     ease: "power3.out",
-    stagger: {
-      amount: 0.2
-    }
+    stagger: 0.2,
+  })
+  .to([playVideo, playVideoCover], {
+    delay: -0.6,
+    opacity: 1,
+    duration: 0,
+  })
+  .to(playVideoCover, {
+    delay: -0.5,
+    height: 0,
+    duration: 1,
+    ease: "power3.out",
   });
 
+//   Home page hand image
+const image = getHtml(".image-inner img");
+const featureBanner = getHtml("#featureBanner");
+const featureBannerGreen = getHtml("#featureBannerGreen");
+gsap.from(image, {
+  delay: 2.2,
+  x: -100,
+  skewX: 2,
+  duration: 0.8,
+  opacity: 0,
+  ease: "power3.out",
+});
 
-  // features section
+gsap.from([featureBanner, featureBannerGreen], {
+  delay: 2.4,
+  x: -60,
+  skewX: 6,
+  duration: 0.8,
+  opacity: 0,
+  ease: "power3.out",
+  stagger: {
+    amount: 0.2,
+  },
+});
 
-  const featuresTitle = getHtml('.features-content h3')
-  const featuresDesc = getHtml('.features-content p')
-  const featuresBtn = getHtml('.features-content .btn-row')
-  const featuresList = document.querySelectorAll('.features-list li')
+// features section
 
-  const featuresTimeline = gsap.timeline()
+const featuresTitle = getHtml(".features-content h3");
+const featuresDesc = getHtml(".features-content p");
+const featuresBtn = getHtml(".features-content .btn-row");
+const featuresList = document.querySelectorAll(".features-list li");
 
-  featuresTimeline.from([featuresTitle, featuresDesc, featuresBtn], {
+const featuresTimeline = gsap.timeline();
+
+featuresTimeline
+  .from([featuresTitle, featuresDesc, featuresBtn], {
     opacity: 0,
     y: 40,
     duration: 0.6,
     ease: "powe3.out",
     stagger: {
-      amount: 0.2
-    }
-  }).from(featuresList, {
+      amount: 0.2,
+    },
+  })
+  .from(featuresList, {
     delay: -0.4,
     opacity: 0,
     y: 40,
     duration: 0.6,
     ease: "power3.out",
     stagger: {
-      amount: 0.4
-    }
+      amount: 0.4,
+    },
   });
 
-  // scroll magic
+// scroll magic
 
-  const controller = new ScrollMagic.Controller();
-  const scene = new ScrollMagic.Scene({
-    triggerElement: "#featureBannerGreen",
-    triggerHook: 0,
-    reverse: false // if true it will reset the animation if we scroll back up
-  })
-    // .addIndicators()
-    .setTween(featuresTimeline)
-    .addTo(controller);
-  
+const controller = new ScrollMagic.Controller();
+const scene = new ScrollMagic.Scene({
+  triggerElement: "#featureBannerGreen",
+  triggerHook: 0,
+  reverse: false, // if true it will reset the animation if we scroll back up
+})
+  // .addIndicators()
+  .setTween(featuresTimeline)
+  .addTo(controller);
+
+// Other
+let reminderCount = 0;
+window.addEventListener("load", (event) => {
+  var w = document.documentElement.clientWidth;
+  var h = document.documentElement.clientHeight;
+  if (w < 1100)
+    alert(
+      "Just a waring this website is not mobile responsive, for the best experience please use a larger screen"
+    );
+});
+window.addEventListener("resize", (e) => {
+  var w = document.documentElement.clientWidth;
+  var h = document.documentElement.clientHeight;
+  if (w < 1100 && reminderCount === 0) {
+    alert("This website is not mobile responsive");
+    reminderCount++;
+  }
+});

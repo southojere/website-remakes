@@ -1,6 +1,6 @@
 ## Landing page remake #1
 
-Main focus was on using GSAP and Scroll magic to create nice animations.
+Followed a online tutorial with the main focus on learning/using GSAP and Scroll magic to create nice animations.
 
 Running the website:
 
